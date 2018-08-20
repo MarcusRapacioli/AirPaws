@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_134703) do
+ActiveRecord::Schema.define(version: 2018_08_20_141712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "pick_up"
+    t.string "drop_off"
+    t.bigint "puppy_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["puppy_id"], name: "index_bookings_on_puppy_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "puppies", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.string "age"
+    t.string "location"
+    t.string "price"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_puppies_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "reviewable_type"
+    t.bigint "reviewable_id"
+    t.bigint "booking_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +63,9 @@ ActiveRecord::Schema.define(version: 2018_08_20_134703) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "puppies"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "puppies", "users"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
 end
