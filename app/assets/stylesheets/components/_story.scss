@@ -37,7 +37,7 @@
   background-size: cover !important;
   border-radius: 3px;
   box-shadow: 3px 3px 10px 0px #999999;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   margin-top: 50px;
   display: flex;
   align-items: center;
@@ -55,7 +55,23 @@
   background-size: cover !important;
   border-radius: 3px;
   box-shadow: 3px 3px 10px 0px #999999;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-puppy{
+  background-image: url('puppy.jpg');
+  text-align: center;
+  height: 420px;
+  width: 720px;
+  background-position: 90% 10%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  border-radius: 3px;
+  box-shadow: 3px 3px 10px 0px #999999;
+  margin-bottom: 50px;
   margin-top: 50px;
   display: flex;
   align-items: center;
@@ -86,6 +102,7 @@
 
 h1 {
   margin-bottom: 50px;
+  font-style: bold;
 }
 
 h3 {
