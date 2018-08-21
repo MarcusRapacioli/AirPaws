@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.references :reviewable, polymorphic: true, index: true
       t.references :booking, foreign_key: true, index: true
       t.text :body
+      t.integer :cuteness_rating
 
       t.timestamps
     end

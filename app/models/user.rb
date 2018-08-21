@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :booked_puppies, through: :bookings, source: :puppy
   has_many :reviews, as: :reviewable
+  validates :first_name, presence: :true
+  validates :last_name, presence: :true
+
+
 
   def given_reviews
     given_reviews = []
