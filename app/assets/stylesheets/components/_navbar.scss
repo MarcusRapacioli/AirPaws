@@ -2,7 +2,7 @@
 .navbar-wagon {
   background: transparent;
   transition: all 0.3s ease;
-  height: 50px;
+  height: 55px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -10,10 +10,11 @@
 }
 
 .nav-link {
+  font-size: 15px;
 text-decoration: none;
 color: white;
 border-bottom: 2px solid transparent;
-padding-bottom: 20px;
+padding-bottom: 10px;
 
 }
 .nav-link:hover {
@@ -30,8 +31,15 @@ border-bottom: 2px solid white;
 .navbar-wagon-brand img {
   height: 50px;
 }
-.navbar-wagon-brand a {
+.fa-paw {
   color: white;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+.fa-paw:hover {
+  color: white;
+  border: 2px solid white;
 }
 
 /* User Avatar */
@@ -93,4 +101,17 @@ border-bottom: 2px solid white;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.fa-bars {
+  color: white;
+}
+
+.drop-link {
+  color: #2A2D30
+}
+
+.drop-link:hover {
+  opacity: 0.5;
+  text-decoration: none;
 }
