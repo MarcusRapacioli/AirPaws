@@ -1,0 +1,33 @@
+<%= render 'shared/navbar' %>
+<%= render 'layouts/banner' %>
+
+
+<div class="main-page" style = "background-color: white;">
+<!-- Search form -->
+  <h3>A selection of the most popular puppies</h3>
+    <div class="container-index">
+      <div class="row">
+          <% @puppies.each do |puppy| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <%= link_to puppy_path(puppy) do %>
+              <div class="card" style="background-image: url(<%= puppy.image %>)">
+                  <div class="card-category"><%=puppy.name%>
+                  </div>
+                  <div class="card-description">
+                    <h2><%= puppy.owner.first_name.capitalize %></h2>
+                    <p><%= puppy.age %> month old <%= puppy.breed %> for $<%= puppy.price %></p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
