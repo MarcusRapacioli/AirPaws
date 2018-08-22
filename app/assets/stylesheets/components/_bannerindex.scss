@@ -1,0 +1,35 @@
+.banner-index {
+  color: white;
+  text-align: center;
+  height: calc(65vh);
+  background-image: url('blacklab.jpg');
+  background-size: cover !important;
+  background-position: 50% 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-bottom: 400px;
+
+}
+
+.container-index {
+  margin-bottom: 300px;
+}
+
+.flex-box {
+  display: flex;
+  justify-contern: space-around;
+
+}
+
+.content-index {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,65 +1,39 @@
-<%= form_tag(puppies_path, method: :get) do |f| %>
-  <div class="form-inputs">
-    <div class="display: inline-block">
-    <%= text_field_tag :breed, params[:breed] %>
-    </div>
-    <div class="display: inline-block">
-      <%= text_field_tag :age, params[:age] %><%#= f.select :age, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24], {:prompt => 'Age of Puppy'} %>  </div>
-    <div class="display: inline-block">
-      <%= text_field_tag :location, params[:location] %>
-   <%#= f.select :days, [1,2,3,4,5,6,7,8,9,10], {:prompt => 'Number of Days'} %>
-    </div>
-    <div class="display: inline-block">
-      <%#= f.text_field :location, placeholder: "City" %>
-    </div>
-     <div class="form-actions">
-      <div class="btn-primary">
-        <%= submit_tag :submit %>
-      </div>
-  </div>
-    </div>
-<% end %>
-
- <div class="content">
-  <div class="cards-container">
-    <div class="row">
-      <% @puppies.each do |puppy| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to puppy_path(puppy) do %>
-          <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)));">
-              <div class="card-category"><%=puppy.name%></div>
-              <div class="card-description">
-                <h2><%= puppy.owner.first_name.capitalize %></h2>
-                <p><%= puppy.age %> month old <%= puppy.breed %> for $<%= puppy.price %></p>
+<div class="container-index">
+    <div class="banner-index">
+      <%= form_tag(puppies_path, method: :get) do |f| %>
+      <div class="form-inputs">
+              <div class="display: inline-block">
+              <%= text_field_tag :breed, params[:breed], placeholder: 'Breed..' %>
+              <%= text_field_tag :age, params[:age], placeholder: 'Age..' %>
+              <%= text_field_tag :location, params[:location], placeholder: 'City..' %>
               </div>
-              <img class="card-user avatar avatar-large" src="images/vick.jpg">
+
+               <div class="form-actions">
+                  <%= submit_tag :submit %>
+              </div>
+              <% end %>
             </div>
+    </div>
+</div>
+
+
+  <div class="container-index">
+      <div class="row">
+          <% @puppies.each do |puppy| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <%= link_to puppy_path(puppy) do %>
+              <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)));">
+                  <div class="card-category"><%=puppy.name%>
+                  </div>
+                  <div class="card-description">
+                    <h2><%= puppy.owner.first_name.capitalize %></h2>
+                    <p><%= puppy.age %> month old <%= puppy.breed %> for $<%= puppy.price %></p>
+                  </div>
+                <img class="card-user avatar avatar-large" src="images/vick.jpg">
+              </div>
             <% end %>
           </div>
       <% end %>
     </div>
   </div>
-  <div id="map">
-  </div>
-</div>
 
-
-    <!-- Gmaps js: building the map -->
-    <script>
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 52.5206, lng: 13.4098},
-          scrollwheel: false,
-          zoom: 8
-        });
-      }
-    </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Gmaps JavaScript -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
-        </script>
