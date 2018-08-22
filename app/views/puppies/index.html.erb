@@ -1,18 +1,18 @@
-<%= form_for(puppies_path) do |f| %>
+<%= form_tag(puppies_path, method: :get) do |f| %>
   <div class="form-inputs">
     <div class="display: inline-block">
-    <%= f.text_field :name, placeholder: "Breed" %>
+    <%= text_field_tag :name, params[:name] %>
     </div>
-    <div class="display: inline-block"><%= f.select :age, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24], {:prompt => 'Age of Puppy'} %></div>
+    <div class="display: inline-block"><%#= f.select :age, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24], {:prompt => 'Age of Puppy'} %></div>
     <div class="display: inline-block">
-   <%= f.select :days, [1,2,3,4,5,6,7,8,9,10], {:prompt => 'Number of Days'} %>
+   <%#= f.select :days, [1,2,3,4,5,6,7,8,9,10], {:prompt => 'Number of Days'} %>
     </div>
     <div class="display: inline-block">
-      <%= f.text_field :location, placeholder: "City" %>
+      <%#= f.text_field :location, placeholder: "City" %>
     </div>
      <div class="form-actions">
       <div class="btn-primary">
-        <%= f.button :submit %>
+        <%= submit_tag :submit %>
       </div>
   </div>
     </div>

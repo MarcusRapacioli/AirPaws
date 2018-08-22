@@ -9,4 +9,7 @@ class Puppy < ApplicationRecord
   validates :age, presence: :true, numericality: { less_than: 25 }
   validates :location, presence: :true
   validates :price, presence: :true
+
+  def self.search(search)
+  end
 end

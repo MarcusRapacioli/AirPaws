@@ -1,7 +1,11 @@
 class PuppiesController < ApplicationController
 
   def index
-    @puppies = Puppy.all
+    if params[:name]
+      @puppies = Puppy.where("breed iLIKE ?", "%#{params[:name]}%")
+    else
+      @puppies = Puppy.all
+    end
   end
 
   def show
