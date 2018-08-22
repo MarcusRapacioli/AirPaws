@@ -6,6 +6,7 @@ class CreatePuppies < ActiveRecord::Migration[5.2]
       t.string :age
       t.string :location
       t.string :price
+      t.text :image
       t.references :user, foreign_key: true
 
       t.timestamps
