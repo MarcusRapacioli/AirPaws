@@ -32,4 +32,3 @@ Puppy.create!(name: "Vicky", breed: "terrier", price: 25000, age: 12, location: 
 Puppy.create!(name: "Sergio", breed: "terrier", price: 25000, age: 12, location: "rio", user_id: 2, image: "https://images.unsplash.com/photo-1481285689591-43b93cc44811?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=be3f882d5781deb8022557e1ff5ebd70&auto=format&fit=crop&w=1522&q=80")
 Puppy.create!(name: "Doris", breed: "terrier", price: 25000, age: 12, location: "rio", user_id: 2, image: "https://images.unsplash.com/photo-1477884143921-51d0a574ee09?ixlib=rb-0.3.5&s=8dad92dd2a9f3bf68529fe21870423f9&auto=format&fit=crop&w=1350&q=80")
 Puppy.create!(name: "Deli", breed: "terrier", price: 25000, age: 12, location: "rio", user_id: 2, image: "https://images.unsplash.com/photo-1472698938026-79bed881e5b7?ixlib=rb-0.3.5&s=b02df100708911379eba4f140687d08a&auto=format&fit=crop&w=1350&q=80")
-
