@@ -12,24 +12,26 @@
   margin: 20px;
 }
 
-.banner {
+.show-banner {
   color: white;
   text-align: center;
   height: 450px;
-  object-fit: cover !important;
+  // object-fit: cover !important;
+    background-size: cover !important;
+    background-position: 50% 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-.banner h1 {
+.show-banner h1 {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-.banner p {
+.show-banner p {
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
@@ -103,4 +105,3 @@
   right: 10px;
   top: 30px;
 }
-
