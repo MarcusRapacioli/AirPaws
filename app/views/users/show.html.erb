@@ -3,6 +3,20 @@
 <div class="profile-avatar">
 </div>
 
+
+<!-- if current user = profile page with all dogs and bookings -->
+<!-- if not, can see profile page  with all dogs and reviews -->
+<!-- app/views/articles/show.html.erb -->
+
+<%= simple_form_for(@user) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <!-- [...] -->
+<% end %>
+
+<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
 <div class="profile-container">
   <div class="booking-container">
     <div class="booking-title">
@@ -36,3 +50,4 @@
     </div>
   </div>
 </div>
+
