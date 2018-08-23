@@ -21,4 +21,6 @@ class Puppy < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+mount_uploader :photo, PhotoUploader
+
 end

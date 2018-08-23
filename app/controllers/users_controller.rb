@@ -6,6 +6,7 @@ def index
   def show
     @user = User.find(params[:id])
     @bookings = Booking.all
+    @puppy = Puppy.find(params[:id])
   end
 
   # def new
