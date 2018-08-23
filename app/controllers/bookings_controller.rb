@@ -17,6 +17,8 @@ class BookingsController < ApplicationController
     @puppy = Puppy.find(params[:puppy_id])
 
     @booking = Booking.new(booking_params)
+    @booking.user_id = @user.id
+    @booking.puppy_id = @puppy.id
     if @booking.save
       redirect_to user_path(@user)
     else
