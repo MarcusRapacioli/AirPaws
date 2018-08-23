@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :reviews, as: :reviewable
   validates :first_name, presence: :true
   validates :last_name, presence: :true
-
+  mount_uploader :photo, PhotoUploader
 
 
   def given_reviews
