@@ -1,0 +1,78 @@
+.profile-banner {
+  background-image: url("https://picsum.photos/1000/600/?random");
+  text-align: center;
+  height: 45vh;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.profile-avatar {
+  background-image: url("https://avatars0.githubusercontent.com/u/6160213?v=4");
+  border-radius: 50%;
+  border: #999 solid 6px;
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+}
+
+.profile-container {
+  margin-right: 150px;
+  margin-left: 150px;
+  margin-top: 200px;
+  display: flex;
+}
+
+.list-row {
+  display: flex;
+  border: 1px solid #999;
+  padding: 20px;
+  h3 {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0 0 12.5px;
+  }
+}
+
+.row-name-breed {
+  padding-right: 70px;
+}
+
+.row-dates {
+  padding-right: 50px;
+}
+
+.row-avatar {
+  padding-right: 25px;
+}
+
+.row-location {
+  padding-right: 70px;
+}
+
+.row-price {
+
+}
+
+.booking-container {
+  width: 70%;
+
+}
+
+
+
+.list-avatar {
+  width: 75px;
+  height: 75px;
+}
+
+.booking-title {
+  h2 {
+    font-weight: bold;
+  }
+}
