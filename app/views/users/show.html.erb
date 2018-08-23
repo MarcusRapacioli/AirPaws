@@ -1,4 +1,53 @@
-<h1><%= @user.first_name %></h1>
+<div class="profile-banner">
+</div>
+<div class="profile-avatar">
+</div>
+
 
 <!-- if current user = profile page with all dogs and bookings -->
 <!-- if not, can see profile page  with all dogs and reviews -->
+<!-- app/views/articles/show.html.erb -->
+
+<%= simple_form_for(@user) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <!-- [...] -->
+<% end %>
+
+<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
+<div class="profile-container">
+  <div class="booking-container">
+    <div class="booking-title">
+      <h2>Your Pup Bookings</h2>
+    </div>
+    <% @bookings.each do |booking| %>
+      <div class="list-row">
+        <div class="row-avatar">
+          <img src="<%= booking.puppy.image %>" class="img-circle list-avatar">
+        </div>
+        <div class="row-name-breed">
+          <h3><%= booking.puppy.name.capitalize %></h3>
+          <p><%= booking.puppy.breed.capitalize %></p>
+        </div>
+        <div class="row-dates">
+          <p><%= booking.pick_up %> - <%= booking.drop_off %></p>
+        </div>
+        <div class="row-location">
+          <p><%= booking.puppy.location.capitalize %></p>
+        </div>
+        <div class="row-price">
+          <p>£<%= booking.puppy.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="puppy-list-container">
+    <div>
+
+    </div>
+  </div>
+</div>
+

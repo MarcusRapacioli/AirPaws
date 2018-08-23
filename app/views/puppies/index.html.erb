@@ -1,15 +1,14 @@
 <div class="container-index">
     <div class="banner-index">
       <%= form_tag(puppies_path, method: :get) do |f| %>
-      <div class="form-inputs">
+     <div class="sexiersearch">
               <div class="display: inline-block">
               <%= text_field_tag :breed, params[:breed], placeholder: 'Breed..' %>
-              <%= text_field_tag :age, params[:age], placeholder: 'Age..' %>
               <%= text_field_tag :location, params[:location], placeholder: 'City..' %>
               </div>
 
-               <div class="form-actions">
-                  <%= submit_tag :submit %>
+               <div class="form-actions ">
+                  <%= submit_tag :Search, class: "btn btn-secondary" %>
               </div>
               <% end %>
             </div>

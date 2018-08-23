@@ -1,24 +1,24 @@
 class PuppiesController < ApplicationController
 
   def index
-    # @puppies = Puppy.all
-    if params[:breed] && params[:age] && params[:location]
-      @puppies = Puppy.where("breed iLIKE ? AND age = '#{params[:age]}' AND location = '#{params[:location]}'", "%#{params[:breed]}%")
-       # iLIKE ? # , "%#{params[:breed]}%")
+    if params[:breed].present?
+        @puppies = Puppy.search_by_breed(params[:breed])
+        if params[:location].present?
+          @puppies = @puppies.search_by_location(params[:location])
+        else
+          @puppies
+        end
+    elsif params[:location].present?
+      @puppies = Puppy.search_by_location(params[:location])
     else
       @puppies = Puppy.all
-     end
-    # elsif params[:location]
-    #   raise
-    #   @puppies = Puppy.where("location = '#{params[:location]}'")
-    # end
-    if params[:location]
-      @puppies = Puppy.where("location = '#{params[:location]}'")
     end
   end
 
   def show
     @puppy = Puppy.find(params[:id])
+    @booking = Booking.new
+    @user = current_user
   end
 
   def new

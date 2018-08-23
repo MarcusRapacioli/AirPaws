@@ -1,28 +1,29 @@
-
 <div>
   <img style="background-image: url(<%= @puppy.image %>" class="show-banner">
 </div>
 
+
+
 <div class="show-container grid">
   <div class="show-cards-container">
-    <div class="puppy-profile show-card">
-      <div class="puppy-name-breed">
-        <h1><%= @puppy.name %></h1>
-      </div>
+          <div class="puppy-profile show-card">
+                    <div class="puppy-name-breed">
+                      <h1><%= @puppy.name %></h1>
+                    </div>
 
-      <div class='flex'>
-        <div class='flex-column'>
-          <i class="fas fa-paw"></i>
-          <p><%= @puppy.breed %></p>
-        </div>
-        <div class='flex-column'>
-          <i class="far fa-calendar-alt"></i> <p><%= @puppy.age %> months</p>
-        </div>
-        <div class='flex-column'>
-          <i class="fas fa-map-marker-alt"></i> <p><%= @puppy.location %></p>
-        </div>
-      </div>
-    </div>
+                    <div class='flex'>
+                          <div class='flex-column'>
+                            <i class="fas fa-paw"></i>
+                            <p><%= @puppy.breed %></p>
+                          </div>
+                          <div class='flex-column'>
+                            <i class="far fa-calendar-alt"></i> <p><%= @puppy.age %> months</p>
+                          </div>
+                          <div class='flex-column'>
+                            <i class="fas fa-map-marker-alt"></i> <p><%= @puppy.location %></p>
+                          </div>
+                    </div>
+          </div>
 
     <div class="show-card puppy-description">
       <h2>About the pup</h2>
@@ -68,10 +69,19 @@
       <h2>Pick up location</h2>
       <p>Clarence House</p>
     </div>
-    <%= link_to "Book the pup", user_path(@puppy, @booker), class: "btn btn-primary book-button" %>
+    <%= link_to "Book the pup", puppies_path(@puppy, @booker), class: "btn btn-primary book-button" %>
   </div>
-</div>
 
+  <div class="show-card book-form">
+    <%= simple_form_for(:booking, url: puppy_bookings_path(puppy_id: @puppy.id), method: :post) do |f| %>
+      <%= f.input :pick_up %>
+      <%= f.input :drop_off %>
+      <%= f.submit "Confirm pup booking", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+</div>
 
 
 
