@@ -155,3 +155,17 @@ body {
 
   }
 }
+
+.sn-link a {
+  margin-left: 350px;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.sn-link a:hover {
+  border-bottom: 2px;
+  text-decoration: none;
+color: white;
+border-bottom: 2px solid white;
+}
