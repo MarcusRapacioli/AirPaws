@@ -17,6 +17,8 @@ class PuppiesController < ApplicationController
 
   def show
     @puppy = Puppy.find(params[:id])
+    @booking = Booking.new
+    @user = current_user
   end
 
   def new

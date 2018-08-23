@@ -68,7 +68,16 @@
       <h2>Pick up location</h2>
       <p>Clarence House</p>
     </div>
-    <%= link_to "Book the pup", user_path(@puppy, @booker), class: "btn btn-primary book-button" %>
+    <%= link_to "Book the pup", puppies_path(@puppy, @booker), class: "btn btn-primary book-button" %>
+  </div>
+
+  <div class="show-card book-form">
+    <%= simple_form_for(:booking, url: puppy_bookings_path(puppy_id: @puppy.id), method: :post) do |f| %>
+      <%= f.input :pick_up %>
+      <%= f.input :drop_off %>
+      <%= f.submit "Confirm pup booking", class: "btn btn-primary" %>
+    <% end %>
+
   </div>
 </div>
 
