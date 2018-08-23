@@ -1,5 +1,4 @@
 class Puppy < ApplicationRecord
-  include PgSearch
   belongs_to :owner, class_name: 'User', foreign_key: 'user_id'
   has_many :bookings
   has_many :bookers, through: :bookings, source: :user
@@ -10,4 +9,16 @@ class Puppy < ApplicationRecord
   validates :age, presence: :true, numericality: { less_than: 25 }
   validates :location, presence: :true
   validates :price, presence: :true
+   include PgSearch
+  pg_search_scope :search_by_location,
+    against: [ :location],
+    using: {
+      tsearch: { prefix: true }
+    }
+  pg_search_scope :search_by_breed,
+    against: [ :breed],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
