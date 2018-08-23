@@ -1,10 +1,24 @@
 class UsersController < ApplicationController
+
+
+
+
+
 def index
     @users = User.all
   end
 
   def show
+    require 'json'
+    require 'open-uri'
     @user = User.find(params[:id])
+    url = 'https://api.teleport.org/api/urban_areas/'
+    teleport_data = open(url).read
+    location = JSON.parse(teleport_data)
+
+    @backgroundphoto = location["_links"]["ua:item"]
+
+
   end
 
   # def new

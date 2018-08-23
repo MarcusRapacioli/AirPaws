@@ -1,5 +1,13 @@
 class BookingsController < ApplicationController
 
+require 'json'
+require 'open-uri'
+
+url = 'https://api.teleport.org/api/'
+teleport_data = open(url).read
+user = JSON.parse(teleport_data)
+
+
   def index
     @bookings = Booking.all
   end

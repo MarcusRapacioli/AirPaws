@@ -1,4 +1,31 @@
+
 <h1><%= @user.first_name %></h1>
 
 <!-- if current user = profile page with all dogs and bookings -->
 <!-- if not, can see profile page  with all dogs and reviews -->
+<div>
+  <!-- < cl_image_path links[ua:items:] -->
+
+  <% selectedcity = @backgroundphoto.find do |href|  %>
+    <% href["name"] == @user.location %>
+    <% end %>
+    <% selectedcity["href"] %>
+
+    <% url = selectedcity["href"]
+    teleport_data = open(url).read
+    imageshref = JSON.parse(teleport_data)
+
+    images = imageshref["_links"]["ua:images"]["href"] %>
+
+    <% imagesurl = images
+    image_data = open(imagesurl).read
+    imagesphotos = JSON.parse(image_data)
+
+    image = imagesphotos["photos"]
+
+    img = image[0]["image"]["web"]
+    %>
+
+  <%= image_tag img %>
+
+</div>
