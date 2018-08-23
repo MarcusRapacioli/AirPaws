@@ -8,6 +8,9 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <div class="navbar-wagon-item">
+      <%= link_to "Puppies", puppies_path, class: "nav-link" %>
+    </div>
+    <div class="navbar-wagon-item">
       <%= link_to "Our Story", pages_story_path, class: "nav-link" %>
     </div>
     <% if user_signed_in? %>
