@@ -123,9 +123,14 @@ body {
     border: 0;
   }
   #submit {
-    color: #707075;
+    color: #c2c2c5;
     transition: color 300ms;
-    text-align: center;
+    text-align: left;
+    margin: 10px;
+    font-size: 16px;
+    font-family: "Open Sans", "Helvetica", "sans-serif";
+    padding: 5px;
+    margin-left: 0px;
   }
   #submit:focus {
     color: #f2f2f2;
@@ -149,4 +154,18 @@ body {
   }
 
   }
+}
+
+.sn-link a {
+  margin-left: 350px;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.sn-link a:hover {
+  border-bottom: 2px;
+  text-decoration: none;
+color: white;
+border-bottom: 2px solid white;
 }
