@@ -19,11 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = @user.id
     @booking.puppy_id = @puppy.id
-    if @booking.save
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
+    @booking.save
   end
 
   def destroy
