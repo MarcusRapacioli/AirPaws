@@ -7,6 +7,14 @@ def index
     @user = User.find(params[:id])
     @bookings = Booking.all
     # @puppy = Puppy.find(params[:puppy_id])
+
+    require 'json'
+    require 'open-uri'
+    url = 'https://api.teleport.org/api/urban_areas/'
+    teleport_data = open(url).read
+    location = JSON.parse(teleport_data)
+
+    @backgroundphoto = location["_links"]["ua:item"]
   end
 
   # def new
