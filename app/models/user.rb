@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :owned_puppies, class_name: 'Puppy', foreign_key: 'user_id'
-  has_many :bookings
-  has_many :booked_puppies, through: :bookings, source: :puppy
-  has_many :reviews, as: :reviewable
+  has_many :owned_puppies, class_name: 'Puppy', foreign_key: 'user_id', dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :booked_puppies, through: :bookings, source: :puppy, dependent: :destroy
+  has_many :reviews, as: :reviewable, dependent: :destroy
   validates :first_name, presence: :true
   validates :last_name, presence: :true
   mount_uploader :photo, PhotoUploader
