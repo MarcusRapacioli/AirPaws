@@ -13,13 +13,13 @@
         <div class='flex'>
               <div class='flex-column'>
                 <i class="fas fa-paw"></i>
-                <p><%= @puppy.breed %></p>
+                <p><%= @puppy.breed.capitalize %></p>
               </div>
               <div class='flex-column'>
                 <i class="far fa-calendar-alt"></i> <p><%= @puppy.age %> months</p>
               </div>
               <div class='flex-column'>
-                <i class="fas fa-map-marker-alt"></i> <p><%= @puppy.location %></p>
+                <i class="fas fa-map-marker-alt"></i> <p><%= @puppy.location.capitalize %></p>
               </div>
         </div>
       </div>
