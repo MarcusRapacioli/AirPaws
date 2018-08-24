@@ -1,7 +1,7 @@
 .show-container {
-  margin-left: 300px;
-  margin-right: 300px;
   display: flex;
+  width: 800px;
+  margin: 0 auto;
 }
 
 .show-cards-container {
@@ -12,7 +12,7 @@
   margin: 20px;
 }
 
-.show-banner {
+.puppy-banner {
   color: white;
   text-align: center;
   height: 450px;
@@ -47,7 +47,7 @@
 
 .puppy-name-breed {
   h1 {
-    font-weight: bold
+    font-weight: bold;
   }
 }
 
@@ -72,6 +72,8 @@
   position: sticky !important;
   top: 0;
   padding: 10px;
+  display: table;
+  border-radius: 5px;
   h1 {
     font-weight: bold;
     font-size: 24px;
@@ -79,6 +81,9 @@
   h2 {
     font-weight: bold;
     font-size: 16px;
+  }
+  div {
+    display: table-row;
   }
 }
 

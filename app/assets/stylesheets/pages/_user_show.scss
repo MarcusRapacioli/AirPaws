@@ -1,3 +1,9 @@
+body {
+  background: #faf0e6
+}
+
+
+
 .profile-banner {
   background-image: url("https://picsum.photos/1000/600/?random");
   text-align: center;
@@ -9,22 +15,28 @@
   position: relative;
 }
 
-.profile-avatar {
-  border-radius: 50%;
-  border: #999 solid 6px;
-  width: 250px;
-  height: 250px;
-  background-size: cover;
+.avatar-container {
   position: absolute;
-  top: 400px;
-  left: 50%;
+  top: 275px;
+  width: 100%;
+}
+
+
+.user-avatar {
+  border-radius: 50%;
+  border: #8D671F solid 6px;
+  width: 175px;
+  height: 175px;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .profile-container {
   margin-right: 150px;
   margin-left: 150px;
-  margin-top: 200px;
-  display: flex;
+  margin-top: 100px;
 }
 
 .list-row {
@@ -53,17 +65,6 @@
 .row-location {
   padding-right: 70px;
 }
-
-.row-price {
-
-}
-
-.booking-container {
-  width: 70%;
-
-}
-
-
 
 .list-avatar {
   width: 75px;

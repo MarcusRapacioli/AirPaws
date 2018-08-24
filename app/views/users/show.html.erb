@@ -1,7 +1,7 @@
 <div class="profile-banner">
 </div>
-<div class="profile-avatar">
-  <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+<div class="avatar-container">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBwzDCJ0rk4OPqjnMBtXWyUoXkSbLrxv2NajYWa18I5y3p3M5"" class="user-avatar">
 </div>
 
 <!-- if current user = profile page with all dogs and bookings -->
@@ -9,38 +9,51 @@
 <!-- app/views/articles/show.html.erb -->
 
 <div class="profile-container">
-  <div class="booking-container">
-    <div class="booking-title">
-      <h2>Your Pup Bookings</h2>
-    </div>
-    <% @bookings.each do |booking| %>
-      <div class="list-row">
-        <div class="row-avatar">
-          <img src="<%= booking.puppy.image %>" class="img-circle list-avatar">
-        </div>
-        <div class="row-name-breed">
-          <h3><%= booking.puppy.name.capitalize %></h3>
-          <p><%= booking.puppy.breed.capitalize %></p>
-        </div>
-        <div class="row-dates">
-          <p><%= booking.pick_up %> - <%= booking.drop_off %></p>
-        </div>
-        <div class="row-location">
-          <p><%= booking.puppy.location.capitalize %></p>
-        </div>
-        <div class="row-price">
-          <p>£<%= booking.puppy.price %></p>
-        </div>
+
+  <ul class="nav nav-tabs"">
+    <li class="active"><a href="#bookings" data-toggle="tab">My Bookings</a></li>
+    <li><a href="#puppies" data-toggle="tab">My puppies</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane" id="bookings">
+      <div class="booking-title">
+        <h2>Your Pup Bookings</h2>
       </div>
-    <% end %>
-  </div>
-
-
-
-  <div class="puppy-list-container">
-    <div>
-
+      <% @bookings.each do |booking| %>
+        <div class="list-row">
+          <div class="row-avatar">
+            <img src="<%= booking.puppy.image %>" class="img-circle list-avatar">
+          </div>
+          <div class="row-name-breed">
+            <h3><%= booking.puppy.name.capitalize %></h3>
+            <p><%= booking.puppy.breed.capitalize %></p>
+          </div>
+          <div class="row-dates">
+            <p><%= booking.pick_up %> - <%= booking.drop_off %></p>
+          </div>
+          <div class="row-location">
+            <p><%= booking.puppy.location.capitalize %></p>
+          </div>
+          <div class="row-price">
+            <p>£<%= booking.puppy.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="puppies">
+      <div>
+        <h2>My Puppies</h2>
+      </div>
     </div>
   </div>
+
+  <div class="booking-card">
+
+  </div>
+
+
+
+
 </div>
 
