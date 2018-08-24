@@ -23,7 +23,7 @@
 
  </div>
 
-<div class="avatar-conner">
+<div class="avatar-container">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBwzDCJ0rk4OPqjnMBtXWyUoXkSbLrxv2NajYWa18I5y3p3M5"" class="user-avatar">
 </div>
 
@@ -39,12 +39,12 @@
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane" id="bookings">
+    <div class="tab-pane" id="bookings" class="active">
       <div class="booking-title">
         <h2>Your Pup Bookings</h2>
       </div>
       <% @bookings.each do |booking| %>
-        <div class="list-row">
+        <div class="booking-card">
           <div class="row-avatar">
             <img src="<%= booking.puppy.photo %>" class="img-circle list-avatar">
           </div>
@@ -53,13 +53,14 @@
             <p><%= booking.puppy.breed.capitalize %></p>
           </div>
           <div class="row-dates">
+            <p><i class="far fa-calendar-alt"></i> Dates of your puppy date</p>
             <p><%= booking.pick_up %> - <%= booking.drop_off %></p>
           </div>
           <div class="row-location">
-            <p><%= booking.puppy.location.capitalize %></p>
+            <p><i class="fas fa-map-marker-alt"></i> <%= booking.puppy.location.capitalize %></p>
           </div>
           <div class="row-price">
-            <p>£<%= booking.puppy.price %></p>
+            <p><i class="fas fa-pound-sign"></i> <%= booking.puppy.price %></p>
           </div>
         </div>
       <% end %>
