@@ -14,8 +14,8 @@ Puppy.destroy_all
 
 puts "creating bundles of cuteness"
 
-user_one = User.create!(first_name: "prince", last_name: "william", email: "will@me.com", password: "moolah123")
-user_one.remote_photo_url = "https://images.unsplash.com/photo-1505441213084-5a6287bd2042?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ad8ee9be94a9e4ef44f89147d648fd7e&auto=format&fit=crop&w=1950&q=80"
+user_one = User.create!(first_name: "prince", last_name: "harry", email: "harry@me.com", password: "moolah123")
+user_one.remote_photo_url = "https://images.unsplash.com/photo-1526911799633-84b785eb1f6a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=88e323d3907733ad69d0b3babddfb2a3&auto=format&fit=crop&w=1950&q=80"
 user_one.save
 
 puppy_one = Puppy.create!(name: "Vincent", breed: "poodle", price: 25000, age: 12, location: "london", owner: User.first)

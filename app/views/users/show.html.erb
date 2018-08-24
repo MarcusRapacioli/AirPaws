@@ -20,7 +20,9 @@
   <#%= image_tag(img, class: "profile-banner") %>
 </div>
  -->
- <div class="profile-banner"></div>
+ <div>
+  <img style="background-image: url(<%= cl_image_path @user.photo %>)" class="puppy-banner">
+ </div>
 
 <div class="avatar-container">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBwzDCJ0rk4OPqjnMBtXWyUoXkSbLrxv2NajYWa18I5y3p3M5"" class="user-avatar">
@@ -32,7 +34,7 @@
 
 <div class="profile-container">
 
-  <ul class="nav nav-tabs"">
+  <ul class="nav nav-tabs">
     <li class="active"><a href="#bookings" data-toggle="tab">My Bookings</a></li>
     <li><a href="#puppies" data-toggle="tab">My puppies</a></li>
   </ul>
@@ -69,6 +71,9 @@
         <h2>My Puppies</h2>
       </div>
 
+<div class="top-margin">
+    <%= link_to "Add puppy", new_puppy_path, class: "form-btn" %>
+</div>
 
       <div class="container-index">
         <div class="row">

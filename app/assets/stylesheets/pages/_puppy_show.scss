@@ -124,4 +124,20 @@
 }
 .form-btn:hover {
   opacity: 0.8;
+  margin: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #7539D5;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7539D5;
+  color: white;
+}
+
+.top-margin {
+  margin-top: 30px;
+  margin-bottom: -15px;
 }

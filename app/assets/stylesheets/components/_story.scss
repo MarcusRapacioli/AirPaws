@@ -84,7 +84,7 @@
   justify-content: center;
 }
 
-.story-container {
+.container {
   color: #555555;
 }
 .story-banner h1 {
@@ -116,4 +116,31 @@ h3 {
 }
 #searchi {
   color: grey !important;
+}
+
+// .btn-primary {
+//   background-color: #7539D5;
+//   color: white;
+// }
+
+.form-btn-story {
+  padding: 10px;
+  border-radius: 5px;
+  background: #7539D5;
+  color: white;
+  margin: 10px;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+.form-btn-story:hover {
+  opacity: 0.8;
+  margin: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #7539D5;
+  color: white;
+   text-align: center;
+  text-decoration: none;
 }
