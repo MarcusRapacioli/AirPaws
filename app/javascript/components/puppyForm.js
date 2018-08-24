@@ -8,6 +8,7 @@ function bindSweetAlertButtonDemo() {
         title: "Puppy booking succesfull",
         text: "Have a wonderful time with a wonderful pup",
         icon: "success"
+        button: "Go to Dashboard"
       });
     });
   }

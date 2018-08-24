@@ -1,4 +1,6 @@
 import "bootstrap";
+import "../plugins/flatpickr";
+
 
 import { blurryScroll } from '../components/banner';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
