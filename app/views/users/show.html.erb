@@ -1,23 +1,28 @@
-<div class="profile-banner">
-    <% selectedcity = @backgroundphoto.find do |href|  %>
-      <% href["name"] == @user.location.capitalize %>
-    <% end %>
-    <% selectedcity["href"] %>
+<!-- <div>
+    <#% selectedcity = @backgroundphoto.find do |href|  %>
+      <#% href["name"] == @user.location.capitalize %>
+    <#% end %>
+    <#% selectedcity["href"] %>
 
-    <% url = selectedcity["href"]
+
+    <#% url = selectedcity["href"]
     teleport_data = open(url).read
     imageshref = JSON.parse(teleport_data)
     images = imageshref["_links"]["ua:images"]["href"] %>
 
-    <% imagesurl = images
+    <#% imagesurl = images
     image_data = open(imagesurl).read
     imagesphotos = JSON.parse(image_data)
     image = imagesphotos["photos"]
     img = image[0]["image"]["web"]
     %>
 
-  <%= image_tag(img, class: "profile-banner") %>
+  <#%= image_tag(img, class: "profile-banner") %>
 </div>
+ -->
+ <div class="profile-banner">
+
+ </div>
 
 <div class="avatar-conner">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBwzDCJ0rk4OPqjnMBtXWyUoXkSbLrxv2NajYWa18I5y3p3M5"" class="user-avatar">
@@ -63,9 +68,28 @@
     <div class="tab-pane" id="puppies">
       <div>
         <h2>My Puppies</h2>
+
+<div class="container-index">
+         <div class="row">
+          <% current_user.owned_puppies.each do |puppy| %>
+            <div class="col-xs-12 col-sm-6 col-md-4 space">
+              <%= link_to puppy_path(puppy) do %>
+              <div class="card" style="background-image: url(<%= puppy.photo %>)">
+                  <div class="card-category"><%=puppy.name%>
+                  </div>
+                  <div class="card-description">
+                    <h2><%= puppy.owner.first_name.capitalize %></h2>
+                    <p><%= puppy.age %> month old <%= puppy.breed %> for $<%= puppy.price %></p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
       </div>
     </div>
   </div>
+</div>
 
   <div class="booking-card">
 
