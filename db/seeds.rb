@@ -14,8 +14,8 @@ Puppy.destroy_all
 
 puts "creating bundles of cuteness"
 
-User.create!(first_name: "prince", last_name: "william", email: "will@me.com", password: "moolah123")
-User.create!(first_name: "prince", last_name: "harry", email: "harry@me.com", password: "moolah123")
+User.create!(first_name: "prince", last_name: "william", email: "will@me.com", password: "moolah123", location: "beijing")
+User.create!(first_name: "prince", last_name: "harry", email: "harry@me.com", password: "moolah123", location: "paris")
 
 
 puppy_one = Puppy.create!(name: "Vincent", breed: "poodle", price: 25000, age: 12, location: "london", owner: User.first)

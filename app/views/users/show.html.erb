@@ -1,6 +1,25 @@
-<div class="profile-banner">
+<div>
+    <% selectedcity = @backgroundphoto.find do |href|  %>
+      <% href["name"] == @user.location.capitalize %>
+    <% end %>
+    <% selectedcity["href"] %>
+
+    <% url = selectedcity["href"]
+    teleport_data = open(url).read
+    imageshref = JSON.parse(teleport_data)
+    images = imageshref["_links"]["ua:images"]["href"] %>
+
+    <% imagesurl = images
+    image_data = open(imagesurl).read
+    imagesphotos = JSON.parse(image_data)
+    image = imagesphotos["photos"]
+    img = image[0]["image"]["web"]
+    %>
+
+  <%= image_tag(img, class: "profile-banner") %>
 </div>
-<div class="avatar-container">
+
+<div class="avatar-conner">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTBwzDCJ0rk4OPqjnMBtXWyUoXkSbLrxv2NajYWa18I5y3p3M5"" class="user-avatar">
 </div>
 
